@@ -1,0 +1,53 @@
+body {
+    background-color: #eaeaea;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root #option {
+    margin: 20px;
+    line-height: 1.5;
+}
+
+#root #option button {
+    width: 50px;
+    height: 25px;
+    margin: 15px;
+}
+
+#root #window table {
+    border-collapse: collapse;
+}
+
+#root #window td {
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+}
+
+#end {
+    visibility: hidden;
+    background-color: crimson;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 50px;
+    font-size: 26px;
+}
+
+.head {
+    background-color: blue;
+}
+
+.body {
+    background-color: aqua;
+}
+
+.food {
+    background-color: red;
+}

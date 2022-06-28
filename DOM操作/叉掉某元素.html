@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            display: flex;
+            flex-direction: row;
+            /* flex父盒子居中 */
+            width: 1000px;
+            height: 500px;
+
+        }
+
+        #img1 {
+            width: 440px;
+            height: 250px;
+        }
+
+        #x {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="../img/4.jpeg" id="img1">
+    <img src="../img/关闭.png" id="x">
+</div>
+<script>
+    var img1 = document.getElementById('img1');
+    var hiddenx = document.getElementById('x');
+    hiddenx.onclick = function (){
+        img1.style.display = 'none';
+    }
+</script>
+</body>
+</html>

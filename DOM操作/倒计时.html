@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>倒计时</title>
+</head>
+<body>
+<textarea name="" id="" cols="30" rows="10">
+    12741968bfwka12741968bfwka12741968bfwka12741968bfwka12741968bfwka12741968bfwka
+</textarea>
+<br>
+<button class="btn" disabled>ok(6)</button>
+</body>
+<script>
+    let btn = document.querySelector('.btn')
+    // 一个变量用来计数
+    let i = 6
+    let time = setInterval(function(){
+        i--;
+        console.log(i);
+        btn.innerHTML = `ok(${i})`
+        if(i ===0){
+            // 移除定时器并修改文字，开启按钮
+            clearInterval(time)
+            btn.disabled = false
+            btn.innerHTML = 'ok'
+        }
+    },1000)
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<img src="../img/search.png" alt="">
+<script>
+    let img = document.querySelector('img')
+    document.addEventListener('mousemove', function (e) {
+        // console.log(e.clientX)
+        // console.log(e.clientY)
+        // 坐标给图片
+        img.style.left = e.pageX + 'px'
+        img.style.top = e.pageY + 'px'
+    })
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tony</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background: url("../img/search.png") round;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+<script>
+    // 先获取
+    let div = document.querySelector("div"); //获取div盒子
+    let startx, starty; //声明一个量  让他处于绝对作用域 不进行赋值
+
+    function moveDiv(e) {
+        //设置一个函数 用于执行鼠标按下拖拽操作的内容
+        let x = e.clientX - startx;
+        let y = e.clientY - starty;
+        //clientX,clientY 鼠标相对于视口的位置
+        //startx,starty 鼠标相对于div盒子的距离
+        if (x < 30) x = 0;// 设置 当x 也就是 鼠标点击的位置距离视窗左上距离为30以下时 不动
+        else if (x > document.documentElement.clientWidth - div.offsetWidth) {
+            x = document.documentElement.clientWidth - div.offsetWidth;
+        }
+        // 当x的距离>页面宽-盒子的宽度(包含padding和边框)
+
+        if (y < 0) y = 0;
+        else if (y > document.documentElement.clientHeight - div.offsetHeight) {
+            y = document.documentElement.clientHeight - div.offsetHeight;
+        }
+
+        div.style.left = x + "px";
+        div.style.top = y + "px";
+    }
+    div.addEventListener("mousedown", function (ev) {
+        // 监听鼠标按下
+        startx = ev.offsetX; //startx y 赋值为ev的距离左 上的距离
+        starty = ev.offsetY;
+        document.addEventListener("mousemove", moveDiv); // 按下后监听鼠标移动,执行 moveDiv名字的函数
+    });
+    div.addEventListener("mouseup", function () {
+        // 当鼠标抬起后 清除鼠标移动事件 move DIV
+        document.removeEventListener("mousemove", moveDiv);
+    });
+
+
+</script>
+</body>
+</html>

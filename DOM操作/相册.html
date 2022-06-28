@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相册</title>
+    <style>
+        body {
+            width: 700px;
+            font-family: "Helvetica", "Arial", serif;
+            color: #333;
+            background-color: #f0f0f0;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #333;
+            background-color: transparent;
+        }
+
+        a {
+            color: #c60;
+            background-color: transparent;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            float: left;
+            padding: 1em;
+            list-style: none;
+        }
+
+        #imagegallery {
+            width: 700px;
+            height: 50px;
+            margin: 10px auto;
+            clear: both
+        }
+
+        #imagegallery a {
+            margin: 0 3.2px;
+            display: inline-block;
+        }
+
+        #imagegallery a img {
+            border: 0;
+        }
+
+        .show {
+            width: 660px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<h2>
+    相册
+</h2>
+
+<div id="imagegallery">
+    <a href="../img/1.jpeg" title="A">
+        <img src="../img/2.jpeg" width="480px" alt="a">
+    </a>
+    <a href="../img/3.jpeg" title="B">
+        <img src="../img/4.jpeg" width="480px" alt="b">
+    </a>
+    <a href="../img/5.jpeg" title="C">
+        <img src="../img/6.jpeg" width="480px" alt="c">
+    </a>
+    <a href="../img/7.jpeg" title="D">
+        <img src="../img/8.jpeg" width="480px" alt="d">
+    </a>
+</div>
+
+<div class="show">
+    <img id="image" src="../img/9.jpeg" alt="" width="480px" height="210px">
+</div>
+
+<p id="des">选择一个图片</p>
+
+<script>
+    // 1.获取元素
+    var imagegallery = document.getElementById("imagegallery");
+    var links = imagegallery.getElementsByTagName("a");
+    var image = document.getElementById("image");
+    var des = document.getElementById("des");
+
+    // 2.遍历数组，添加点击事件
+    for (var i = 0; i < links.length; i++) {
+        links[i].onclick = function () {
+            // alert("aaa");
+            // 3.更改 image 内部的 src 属性值
+            // this 关键字指代的是触发事件的真正事件源
+            image.src = this.href;
+            // 4.更改 des 内部的文字内容
+            des.innerText = this.title;
+            // 5.取消 a 标签的的默认跳转效果
+            return false;
+        };
+    }
+
+    // for 循环内部添加的绑定事件，在触发时，所有的指添加的事件已经成功，触发事件时都是在循环结束之后
+    // 批量绑定的事件的事件函数内部如果有变量 i，要注意 函数执行时已经是在循环结束后
+    // 循环内部定义的变量是一个全局变量，在循环后执行的 i 变量的值是 i 跳出循环时的值
+    // image.src = links[i].href;
+    // console.log(i);
+</script>
+</body>
+
+</html>

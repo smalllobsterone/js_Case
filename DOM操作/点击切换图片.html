@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击按钮切换图片</title>
+</head>
+
+<body>
+<input type="button" value="点击" id="btn"><br>
+<img src="../img/1.jpeg" alt="" id="pic">
+
+<script>
+    // 获取元素
+    var btn = document.getElementById("btn");
+    var pic = document.getElementById("pic");
+    // 通过一个变量作为判断条件，变量值为1，认为加载的是 a 图片，如果变量为2，认为加载的是 b 图片
+    var flag = 0;
+    // 给按钮添加点击事件
+    btn.onclick = function () {
+        // 给图片换 src 的属性值
+        // 通过 if 语句判断，如果是 a 图片，就换成 b 图片，反之换成 a 图片
+        if (flag === 1) {
+            pic.src = "../img/1.jpeg";
+            flag = 0;//点击后再变回0，这样可以循环
+        } else {
+            pic.src = "../img/2.jpeg";
+            flag = 1;
+        }
+    };
+</script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1200px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid rebeccapurple;
+            overflow: hidden;
+        }
+
+        ul {
+            width: 1200px;
+        }
+
+        li {
+            width: 240px;
+            height: 400px;
+            float: left;
+            transition: all 500ms;
+            list-style: none
+        }
+
+        img {
+            height: 400px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li>
+            <a href="">
+                <img src="../img/卡片2.jpeg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../img/卡片2.jpeg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../img/卡片2.jpeg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../img/卡片2.jpeg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <img src="../img/卡片2.jpeg" alt="">
+            </a>
+        </li>
+    </ul>
+</div>
+<script>
+    // 鼠标经过时宽度变400px，其余100px，离开时复原宽度240px
+    //使用排他
+    let lis = document.querySelectorAll('li')
+    // 绑定事件，鼠标经过
+    for (let i = 0; i < lis.length; i++) {
+        lis[i].addEventListener('mouseenter',function (){
+            for(let j=0;j<lis.length;j++){
+                lis[j].style.width='100px'
+            }
+            //单个元素
+            this.style.width='400px'
+        })
+        lis[i].addEventListener('mouseleave',function (){
+            for(let j=0;j<lis.length;j++){
+                lis[j].style.width='240px'
+            }
+        })
+    }
+</script>
+</body>
+</html>

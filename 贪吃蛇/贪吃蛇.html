@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原生js贪吃蛇</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<div id="root">
+    <div id="window">
+    </div>
+    <div id="option">
+        <div id="end">游戏结束</div>
+        <div id="scored"></div>
+        <button id="start">开始</button>
+        <button id="pause">暂停</button>
+        <dl>
+            <dt>游戏帮助</dt>
+            <dd>使用 WASD 移动</dd>
+            <dd>游戏速度与蛇的长度成正比</dd>
+            <dt>失败条件</dt>
+            <dd>触碰地图边界</dd>
+            <dd>碰到自己</dd>
+        </dl>
+    </div>
+</div>
+
+</body>
+<script src="index.js"></script>
+<script>
+    main();
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+1. 定义变量和函数
+
+const customName = document.getElementById('customname');
+const randomize = document.querySelector('.randomize');
+常量故事 = document.querySelector('.story');
+
+函数 randomValueFromArray(array) {
+  返回数组[Math.floor(Math.random() * array.length)];
+}
+
+2.纯文本字符串
+
+今天34分钟出去，但是：遛弯。当到达：insertb：门前时，突然出现：insertc：。人们都惊呆了，李雷全程目睹一个并没有慌乱，因为：inserta：是130公斤的胖子，天气又辣么热。
+
+厦门威利
+大老爹
+废旧
+
+肯德基
+迪士尼乐园
+句意
+
+自燃了
+在人行道化成一坨泥
+变成一条鼻涕虫爬出来
+
+3. 事件监听器和未完成的函数定义
+
+randomize.addEventListener('click', 结果);
+
+函数结果（）{
+
+  if(customName.value !== '') {
+    让名称 = customName.value;
+
+  }
+
+  if(document.getElementById("american").checked) {
+    让权重 = Math.round(300);
+    让温度 = Math.round(94);
+
+  }
+
+  story.textContent = ;
+  story.style.visibility = '可见';
+}
