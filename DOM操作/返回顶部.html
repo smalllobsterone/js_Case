@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .center {
+            width: 700px;
+            height: 3000px;
+            background-color: #D0A8B5;
+            margin: 0 auto;
+        }
+
+
+
+        .back-top {
+            display: none;
+            width: 50px;
+            height: 50px;
+            left: 50%;
+            margin: 0 0 0 505px;
+            position: fixed;
+            bottom: 60px;
+            z-index: 100;
+        }
+
+        .back-top a {
+            display: block;
+            height: 50px;
+            width: 50px;
+            background: url("../img/返回顶部.png") no-repeat;
+            background-size: 50px 50px;
+            opacity: 0.35;
+            overflow: hidden;
+            text-indent: -999em;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<div class="center"></div>
+<div class="back-top">
+    <a href="javascript:;"></a>
+</div>
+
+<script>
+    //当div滚动，弹出某事。换成Windows时就是整个页面滚动到某位置
+    // let div = document.querySelector('div')
+    // div.addEventListener('scroll', function () {
+    //     console.log(111)
+    // })
+
+    //后加载
+    // window.addEventListener('load',function (){
+    //     let div1 = document.querySelector('div')
+    //     console.log(div1)
+    // })
+    let backtop = document.querySelector('.back-top')
+    // 1滚动
+    window.addEventListener('scroll', function () {
+        let num = document.documentElement.scrollTop
+        // 2、页面滚动大于500时显示
+        if (num >= 500) {
+            backtop.style.display = 'block'
+        } else {
+            backtop.style.display = 'none'
+        }
+    })
+    // 点击链接返回顶部。children就是第二个节点
+    backtop.children[0].addEventListener('click',
+        function () {
+        //返回顶部，即回到top为0的地方
+            document.documentElement.scrollTop = 0
+        })
+</script>
+
+
+</body>
+</html>
